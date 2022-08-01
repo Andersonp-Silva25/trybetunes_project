@@ -40,7 +40,6 @@ export default class Login extends Component {
 
   render() {
     const { isDisableButton, isLoading } = this.state;
-    const { history } = this.props;
     return (
       <div data-testid="page-login">
 
