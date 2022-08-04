@@ -15,7 +15,9 @@ export default class Album extends Component {
 
   async componentDidMount() {
     const { match: { params: { id } } } = this.props;
-    this.setState({ musics: await getMusics(id) });
+    this.setState({
+      musics: await getMusics(id),
+    });
   }
 
   render() {
@@ -33,7 +35,7 @@ export default class Album extends Component {
             )
               : (
                 <MusicCard
-                  key={ music.trackName + music.artistId }
+                  key={ music.trackId + music.trackName + music.artistId }
                   trackName={ music.trackName }
                   previewUrl={ music.previewUrl }
                   trackId={ music.trackId }
